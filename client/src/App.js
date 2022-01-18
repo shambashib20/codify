@@ -112,7 +112,7 @@ class App extends Component {
                 ...codeMirrorOptions,
               }}
               onBeforeChange={(editor, data, html) => {
-                this.setState({ html });
+                this.setState({ html }, () => this.syncUpdates());
               }}
             />
           </div>
@@ -125,7 +125,7 @@ class App extends Component {
                 ...codeMirrorOptions,
               }}
               onBeforeChange={(editor, data, css) => {
-                this.setState({ css });
+                this.setState({ css }, () => this.syncUpdates());
               }}
             />
           </div>
@@ -138,7 +138,7 @@ class App extends Component {
                 ...codeMirrorOptions,
               }}
               onBeforeChange={(editor, data, js) => {
-                this.setState({ js });
+                this.setState({ js }, () => this.syncUpdates());
               }}
             />
           </div>
